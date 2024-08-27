@@ -1,14 +1,15 @@
 const mongoose = require ('mongoose');
-constattendanceSchema = new mongoose.Schema({
+const attendanceSchema = new mongoose.Schema({
     date: {
-        type: data,
+        type: Date,
         required: true,
     },
     status: {
         type: String,
-    },
-
-})
+        enum: ['present', 'absent'],
+        required: true,
+    }
+});
 const studentRecordSchema = new mongoose.Schema({
     name: {
         type: String,
