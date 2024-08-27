@@ -33,10 +33,10 @@ app.get('/user/validateToken', (req, res) => {
         const verified = jwt.verify(token, secret_key);
 
         if (verified) {
-            console.log(JSON Web Token has been verified: ${JSON.stringify(verified)});
+            console.log(`JSON Web Token has been verified: ${JSON.stringify(verified)}`);
             res.send('Token is valid');
         } else {
-            console.log(User is not authorized: ${JSON.stringify(verified)});
+            console.log(`User is not authorized: ${JSON.stringify(verified)}`);
             res.status(401).send('Invalid token');
         }
     } catch (error) {
@@ -46,4 +46,5 @@ app.get('/user/validateToken', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('Connected to port ${PORT}});
+    console.log(`Connected to port ${PORT}`);
+});
